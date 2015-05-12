@@ -26,10 +26,23 @@ require "prime" #引用库
 		puts sum
 	end
 def revseCels2fahr
-		c = hs / 9 * 5 - 32
+		c = (hs.to_f-32) / 9.0 * 5.0
 		puts c
 end
-#判断一个数是否为素数
+
+###判断一个数是否为素数
+
+#借鉴解法
+	def prime?(num)
+	  return false if num < 2
+	  2.upto(Math.sqrt(num)) do |i|
+	    if num % i == 0
+	      return false
+	    end
+	  end
+	  return true
+	end
+#自写解法
 	def isPrime(num)
 		n = 0
 		for i in 2..num-1
@@ -46,4 +59,4 @@ end
 	end
 dice10
 isPrime(391)	
-puts 391.prime? #引用库直接方法
+puts 391.prime? #引用库直接方法 require "prime" #引用库

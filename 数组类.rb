@@ -1,11 +1,12 @@
 @a = []
 a3 = []
 ###创建一个1到100升序排列的数组 a
+#自写
 for i in 1..100 do
 	@a << i
 	end
-
-
+# 使用范围对象的to_a方法
+  # @a = (1..100).to_a
 p @a[7]	
 ### 建立数组a遍历 eachElem方法
 def  eachElem
@@ -19,10 +20,16 @@ b = @a.collect!{|x| x*100}
 ###获取数组a中 3的倍数的元素,并赋值给数组 a3    不创建新数组的情况下把3倍数以外的元素全部删除
 @a.each do |x|
 	if x%3==0
-		a3<<x	
+		a3<<x
 	end
 end
-@a.delete_if{|x| x%3!=0}
+#Ruby
+a4 = @a.select{|x| x%3 == 0}
+a3 = @a.reject{|x| x%3 != 0}
+#自写
+@a.delete_if{|x| x%3 != 0}
+# 删除ary中3的倍数以外的元素  Ruby
+a.reject!{|i| i % 3 != 0 }
 
 ###数组a倒序排列
 @a.reverse!

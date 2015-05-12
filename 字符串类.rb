@@ -1,10 +1,13 @@
 ### 有字符串 "Ruby is an object oriented programming language",请创建一个数组,数组元素为每个字符串的各个单词
 str = "Ruby is an object oriented programming language"
 a = str.split(/\s/)
+
 ###按照英文字母顺序进行排序
 a.sort!
+
 ###不区分大小写,将数组按照平稳字母进行排序
 p a.sort_by!{|x| x.downcase}
+
 ###将str字符串的全部单词的首个字母转换成大写,然后输出结果
 str = "Ruby is an object oriented programming language"
 a = str.split(/\s/)
